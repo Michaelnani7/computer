@@ -122,9 +122,9 @@
                                     <div class="home_slider_content" data-animation-in="fadeIn"
                                          data-animation-out="animate-out fadeOut">
                                         <div class="home_slider_title">A new Online Shop experience.</div>
-                                        <div class="home_slider_subtitle">Hi I am Mike Adeyinka
-                                            I Sell Computers, Iphones<br/>I also Repair and Swap Accessories<br/>
-                                            Aims and Objectives of this Website is to make you interact with Ikeja (Computer Village) without any fear at any part of Nigeria..
+                                        <div class="home_slider_subtitle">Hi, I am ADEYINKA MICHAEL OLUWASEUN,<br/>
+                                            I sell & buy Computers , Iphones, Andriod etc...<br/>with OMA COMM you are guarantee with strong customer service and problem solving skills<br/> to PC repair , Troubleshooting and Maintenance.<br/>
+                                             At OMA COMMUNICATIONS you can interact with Ikeja (Computer Village) without any fear at any part of Nigeria ..
                                         </div>
                                         <div class="button button_light home_button"><a href="#">Shop Below</a></div>
                                     </div>
@@ -206,7 +206,7 @@
                         <!-- Product -->
                         {% for comp in comps %}
                         <div class="product">
-                            <div class="product_image"><a href="{% url 'computers' %}"><img src="{{ comp.image.url }}" alt=""></a></div>
+                            <div class="product_image"><a href="{% url 'computers' %}"><img src="{{ comp.image.url }}" height="250" width="200" alt=""></a></div>
                             {% if comp.new %}
                             <div class="product_extra product_new"><a href="#">New</a></div>
                             {% endif %}
@@ -243,7 +243,7 @@
                         <!-- Product -->
                         {% for phon in phons %}
                         <div class="product">
-                            <div class="product_image"><a href="{% url 'iphones' %}"><img src="{{ phon.image.url }}" alt=""></a></div>
+                            <div class="product_image"><a href="{% url 'iphones' %}"><img src="{{ phon.image.url }}" height="250" width="200" alt=""></a></div>
                             {% if phon.new %}
                             <div class="product_extra product_new"><a href="#">New</a></div>
                             {% endif %}

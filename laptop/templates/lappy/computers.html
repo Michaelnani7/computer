@@ -5,7 +5,7 @@
 
 {% for pc in pcs %}
 <div class="product">
-    <div class="product_image"><a href="{% url 'detail' pc.id %}"><img src="{{ pc.image.url }}" alt=""></a></div>
+    <div class="product_image"><a href="{% url 'detail' pc.id %}"><img src="{{ pc.image.url }}" height="250" width="200"  alt=""></a></div>
     {% if pc.new %}
     <div class="product_extra product_new">New</div>
      {% endif %}
