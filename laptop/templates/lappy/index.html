@@ -206,7 +206,7 @@
                         <!-- Product -->
                         {% for comp in comps %}
                         <div class="product">
-                            <div class="product_image"><a href="{% url 'computers' %}"><img src="{{ comp.image.url }}" height="250" width="200" alt=""></a></div>
+                            <div class="product_image"><a href="{% url 'computers' %}"><img src="{{ comp.image.url }}" height="300" width="300" alt=""></a></div>
                             {% if comp.new %}
                             <div class="product_extra product_new"><a href="#">New</a></div>
                             {% endif %}
@@ -243,7 +243,7 @@
                         <!-- Product -->
                         {% for phon in phons %}
                         <div class="product">
-                            <div class="product_image"><a href="{% url 'iphones' %}"><img src="{{ phon.image.url }}" height="250" width="200" alt=""></a></div>
+                            <div class="product_image"><a href="{% url 'iphones' %}"><img src="{{ phon.image.url }}" height="300" width="300" alt=""></a></div>
                             {% if phon.new %}
                             <div class="product_extra product_new"><a href="#">New</a></div>
                             {% endif %}
