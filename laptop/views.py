@@ -1,13 +1,15 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Laptop, Phones, Computers, Iphones
+from .models import Laptop, Phones, Computers, Iphones, Quiz
 
 
 def index(request):
     comps = Laptop.objects.all()
     phons = Phones.objects.all()
+    questions = Quiz.objects.all()
     context ={
         'comps': comps,
         'phons': phons,
+        'questions': questions
     }
     return render(request, 'lappy/index.html', context)
 
@@ -43,6 +45,10 @@ def phone(request, set_id):
         'set': set
     }
     return render(request, 'lappy/phone.html', context)
+
+
+
+
 
 
 

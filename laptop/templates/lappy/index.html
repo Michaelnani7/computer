@@ -262,25 +262,30 @@
     </div>
 
 
-    <!-- Ad -->
+    <!-- Quiz centre -->
 
-    <div class="avds_xl">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="avds_xl_container clearfix">
-                        <div class="avds_xl_background"
-                             style="background-image:url('/static/images/product_5.jpg')"></div>
-                        <div class="avds_xl_content">
-                            <div class="avds_title"><h2>Amazing Devices</h2></div>
-                            <div class="avds_text"><h2>Wireless Handsfree.</h2></div>
-                            <div class="avds_link avds_xl_link"><a href="#">See More</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="products">
+		<div class="container">
+            <div class="text-center"><h2><b><a href="" >FRIDAY QUIZ</a></b></h2></div>
+			<div class="row">
+
+				<div class="col">
+					<div class="product_grid">
+						<!-- Product -->
+                        {% for quiz in questions %}
+						<div class="product">
+							<div class="product_image"><img src="{{ quiz.image.url }}"height="300" width="300" alt=""></div>
+							<div class="product_content">
+								<div class="product_title"><a href="product.html">{{ quiz.text}}</a></div>
+							</div>
+						</div>
+                           {% endfor %}
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
 
     <!-- Icon Boxes -->
 

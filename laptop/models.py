@@ -41,3 +41,12 @@ class Iphones(models.Model):
 
     def __str__(self):
         return self.model
+
+
+class Quiz(models.Model):
+    image = models.ImageField(upload_to='image')
+    text = models.TextField()
+
+    def __str__(self):
+        return self.text
+
