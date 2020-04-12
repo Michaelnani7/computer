@@ -84,9 +84,11 @@
                 </div>
                 <ul class="page_menu_nav menu_mm">
                     <li class="page_menu_item menu_mm"><a href="{% url 'computers' %}">Computers</a></li>
-                    <li class="page_menu_item menu_mm"><a href="{% url 'iphones' %}">Iphones<i class="fa fa-angle-down"></i></a>
+                    <li class="page_menu_item menu_mm"><a href="{% url 'iphones' %}">Iphones<i
+                            class="fa fa-angle-down"></i></a>
                     </li>
-                    <li class="page_menu_item menu_mm"><a href="https://whispering-refuge-12246.herokuapp.com/">Portfolio</a></li>
+                    <li class="page_menu_item menu_mm"><a href="https://whispering-refuge-12246.herokuapp.com/">Portfolio</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -123,8 +125,11 @@
                                          data-animation-out="animate-out fadeOut">
                                         <div class="home_slider_title">A new Online Shop experience.</div>
                                         <div class="home_slider_subtitle">Hi, I am ADEYINKA MICHAEL OLUWASEUN,<br/>
-                                            I sell & buy Computers , Iphones, Andriod etc...<br/>with OMA COMM you are guarantee with strong customer service and problem solving skills<br/> to PC repair , Troubleshooting and Maintenance.<br/>
-                                             At OMA COMMUNICATIONS you can interact with Ikeja (Computer Village) without any fear at any part of Nigeria ..
+                                            I sell & buy Computers , Iphones, Andriod etc...<br/>with OMA COMM you are
+                                            guarantee with strong customer service and problem solving skills<br/> to PC
+                                            repair , Troubleshooting and Maintenance.<br/>
+                                            At OMA COMMUNICATIONS you can interact with Ikeja (Computer Village) without
+                                            any fear at any part of Nigeria ..
                                         </div>
                                         <div class="button button_light home_button"><a href="#">Shop Below</a></div>
                                     </div>
@@ -175,10 +180,12 @@
                 <div class="avds_large_container">
                     <div class="avds_large_content">
                         <div class="avds_title" style="color:red;">Become a Pro in Photograghy</div>
-                        <div class="avds_text"><h4> Are you thinking of becoming a guru in Photography and Cinematography:
+                        <div class="avds_text"><h4> Are you thinking of becoming a guru in Photography and
+                            Cinematography:
                             Contact us below
                         </h4></div>
-                        <div class="avds_link avds_link_large"><a href="https://whispering-refuge-12246.herokuapp.com/">Click to redirect</a></div>
+                        <div class="avds_link avds_link_large"><a href="https://whispering-refuge-12246.herokuapp.com/">Click
+                            to redirect</a></div>
                     </div>
                 </div>
             </div>
@@ -206,13 +213,15 @@
                         <!-- Product -->
                         {% for comp in comps %}
                         <div class="product">
-                            <div class="product_image"><a href="{% url 'computers' %}"><img src="{{ comp.image.url }}" height="300" width="300" alt=""></a></div>
+                            <div class="product_content">
+                                <div class="product_image"><a href="{% url 'computers' %}"><img
+                                        src="{{ comp.image.url }}" height="300" width="300" alt=""></a></div>  <div class="product_title"><a href="{% url 'computers' %}">{{ comp.name }}</a></div>
+
+
+                            </div>
                             {% if comp.new %}
                             <div class="product_extra product_new"><a href="#">New</a></div>
                             {% endif %}
-                            <div class="product_content">
-                                <div class="product_title"><a href="{% url 'computers' %}">{{ comp.name }}</a></div>
-                            </div>
                         </div>
                         {% endfor %}
 
@@ -224,7 +233,7 @@
 
     </div>
     <!-- phone -->
-     <div class="products">
+    <div class="products">
         <div class="container">
             <div class="row" style="color:black;">
                 <div class="col">
@@ -243,13 +252,15 @@
                         <!-- Product -->
                         {% for phon in phons %}
                         <div class="product">
-                            <div class="product_image"><a href="{% url 'iphones' %}"><img src="{{ phon.image.url }}" height="300" width="300" alt=""></a></div>
+                            <div class="product_content">
+                                 <div class="product_image"><a href="{% url 'iphones' %}"><img src="{{ phon.image.url }}" height="300" width="300" alt=""></a></div> 
+                                <div class="product_title"><a href="{% url 'iphones' %}">{{ phon.name }}</a></div>
+
+                            </div>
                             {% if phon.new %}
                             <div class="product_extra product_new"><a href="#">New</a></div>
                             {% endif %}
-                            <div class="product_content">
-                                <div class="product_title"><a href="{% url 'iphones' %}">{{ phon.name }}</a></div>
-                            </div>
+
                         </div>
                         {% endfor %}
 
@@ -265,26 +276,27 @@
     <!-- Quiz centre -->
 
     <div class="products">
-		<div class="container">
-            <div class="text-center"><h3><b><a href="#" > Oma Comm News Headline </a></b></h3></div>
-			<div class="row">
-				<div class="col">
-					<div class="product_grid">
-						<!-- Product -->
+        <div class="container">
+            <div class="text-center"><h3><b><a href="#"> Oma Comm News Headline </a></b></h3></div>
+            <div class="row">
+                <div class="col">
+                    <div class="product_grid">
+                        <!-- Product -->
                         {% for quiz in questions %}
-						<div class="product">
-							<div class=""><img src="{{ quiz.image.url }}"height="200" width="150" alt=""></div><br/>
-							<div class="product_content">
-								<div class="product_title"><a href="product.html">{{ quiz.text}}</a></div>
-							</div>
-						</div>
-                           {% endfor %}
-					</div>
-				</div>
+                        <div class="product">
+                            <div class="product_content">
+                                <div class="product_title"><a href="product.html">{{ quiz.text}}</a></div>
+                            </div>
+                            <div class=""><img src="{{ quiz.image.url }}" height="200" width="150" alt=""></div>
+                            <br/>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
 
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+    </div>
 
     <!-- Icon Boxes -->
 
@@ -322,7 +334,8 @@
                         <div class="icon_box_image"><img src="{% static 'images/icon_3.svg' %}" alt=""></div>
                         <div class="icon_box_title">24h Fast Support</div>
                         <div class="icon_box_text">
-                            <p>We active for your delivery in 24Hours<br/>adeyinkamichael95@gmail.com<br/> 07063201688</p>
+                            <p>We active for your delivery in 24Hours<br/>adeyinkamichael95@gmail.com<br/> 07063201688
+                            </p>
 
                         </div>
                     </div>
@@ -376,7 +389,8 @@
                             <ul>
 
                                 <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                <li><a href="https://www.facebook.com/Madeyinka2"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.facebook.com/Madeyinka2"><i class="fa fa-facebook"
+                                                                                     aria-hidden="true"></i></a></li>
 
                             </ul>
                         </div>
