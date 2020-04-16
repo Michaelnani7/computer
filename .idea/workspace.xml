@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ae22137b-447d-46e2-bf20-8afe33068ba3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laptop/templates/lappy/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/laptop/templates/lappy/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/laptop/templates/lappy/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="286">
-              <caret line="281" column="39" lean-forward="true" selection-start-line="281" selection-start-column="39" selection-end-line="281" selection-end-column="39" />
+              <caret line="281" column="39" selection-start-line="281" selection-start-column="39" selection-end-line="281" selection-end-column="39" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -166,7 +164,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="28" />
     <option name="width" value="1083" />
     <option name="height" value="728" />
@@ -177,36 +175,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="computer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="computer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="computer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="computer" type="462c0819:PsiDirectoryNode" />
-              <item name="laptop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="computer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="computer" type="462c0819:PsiDirectoryNode" />
-              <item name="laptop" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="computer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="computer" type="462c0819:PsiDirectoryNode" />
-              <item name="laptop" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="lappy" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -431,7 +401,7 @@
     <entry file="file://$PROJECT_DIR$/laptop/templates/lappy/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
-          <caret line="281" column="39" lean-forward="true" selection-start-line="281" selection-start-column="39" selection-end-line="281" selection-end-column="39" />
+          <caret line="281" column="39" selection-start-line="281" selection-start-column="39" selection-end-line="281" selection-end-column="39" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
