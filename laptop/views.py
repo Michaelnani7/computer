@@ -1,13 +1,36 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Laptop, Phones, Computers, Iphones, Quiz
+from marketing.models import Signup
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def index(request):
     comps = Laptop.objects.all()
     phons = Phones.objects.all()
     questions = Quiz.objects.all()
+
+    if request.method == "POST":
+        email = request.POST["email"]
+        new_signup = Signup()
+        new_signup.email = email
+        new_signup.save()
+
+    paginator = Paginator(comps, 4)
+    page_request_var = 'page'
+    page = request.GET.get(page_request_var)
+
+    try:
+        paginated_queryset = paginator.page(page)
+
+    except PageNotAnInteger:
+        paginated_queryset = paginator.page(1)
+
+    except EmptyPage:
+        paginated_queryset = paginator.page(paginator.num_pages)
+
     context ={
-        'comps': comps,
+        'queryset': paginated_queryset,
+        'page_request_var': page_request_var,
         'phons': phons,
         'questions': questions
     }
@@ -16,8 +39,23 @@ def index(request):
 
 def computers(request):
     pcs = Computers.objects.all()
+    paginator = Paginator(pcs, 4)
+    page_request_var = 'page'
+    page = request.GET.get(page_request_var)
+
+    try:
+        paginated_queryset = paginator.page(page)
+
+    except PageNotAnInteger:
+        paginated_queryset = paginator.page(1)
+
+    except EmptyPage:
+        paginated_queryset = paginator.page(paginator.num_pages)
+
     context = {
-        'pcs': pcs
+        'queryset': paginated_queryset,
+        'page_request_var': page_request_var
+
     }
     return render(request, 'lappy/computers.html', context)
 
@@ -32,9 +70,22 @@ def detail(request, pc_id):
 
 def iphones(request):
     sets = Iphones.objects.all()
+    paginator = Paginator(sets, 2)
+    page_request_var = 'page'
+    page = request.GET.get(page_request_var)
+
+    try:
+        paginated_queryset = paginator.page(page)
+
+    except PageNotAnInteger:
+        paginated_queryset = paginator.page(1)
+
+    except EmptyPage:
+        paginated_queryset = paginator.page(paginator.num_pages)
     context = {
 
-        'sets': sets
+        'queryset': paginated_queryset,
+        'page_request_var': page_request_var
     }
     return render(request, 'lappy/iphones.html', context)
 

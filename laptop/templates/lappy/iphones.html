@@ -1,16 +1,13 @@
 {% extends 'cate.html' %}
 {% block content %}
 
-{% for set in sets %}
+{% for set in queryset %}
 <div class="product">
-    <div class="product_image"><a href="{% url 'phone' set.id %}"><img src="{{ set.image.url }}" height="120" width="120" alt=""></a></div>
+    <div class="product_image"><a href="{% url 'phone' set.id %}"><img src="{{ set.image.url }}" height="150" width="150" alt=""></a></div>
     {% if set.new %}
       <div class="product_extra product_new">New</div>
      {% endif %}
     <p><h4><a href="{% url 'phone' set.id %}"> Click here for more informations</a></h4></p>
 </div>
 {% endfor %}
-
-
-
 {% endblock %}

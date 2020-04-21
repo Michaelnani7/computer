@@ -84,9 +84,11 @@
                 </div>
                 <ul class="page_menu_nav menu_mm">
                     <li class="page_menu_item menu_mm"><a href="{% url 'computers' %}">Computers</a></li>
-                    <li class="page_menu_item menu_mm"><a href="{% url 'iphones' %}">Iphones<i class="fa fa-angle-down"></i></a>
+                    <li class="page_menu_item menu_mm"><a href="{% url 'iphones' %}">Iphones<i
+                            class="fa fa-angle-down"></i></a>
                     </li>
-                    <li class="page_menu_item menu_mm"><a href="https://whispering-refuge-12246.herokuapp.com/">Portfolio</a></li>
+                    <li class="page_menu_item menu_mm"><a href="https://whispering-refuge-12246.herokuapp.com/">Portfolio</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -123,8 +125,11 @@
                                          data-animation-out="animate-out fadeOut">
                                         <div class="home_slider_title">A new Online Shop experience.</div>
                                         <div class="home_slider_subtitle">Hi, I am ADEYINKA MICHAEL OLUWASEUN,<br/>
-                                            I sell & buy Computers , Iphones, Andriod etc...<br/>with OMA COMM you are guarantee with strong customer service and problem solving skills<br/> to PC repair , Troubleshooting and Maintenance.<br/>
-                                             At OMA COMMUNICATIONS you can interact with Ikeja (Computer Village) without any fear at any part of Nigeria ..
+                                            I sell & buy Computers , Iphones, Andriod etc...<br/>with OMA COMM you are
+                                            guarantee with strong customer service and problem solving skills<br/> to PC
+                                            repair , Troubleshooting and Maintenance.<br/>
+                                            At OMA COMMUNICATIONS you can interact with Ikeja (Computer Village) without
+                                            any fear at any part of Nigeria ..
                                         </div>
                                         <div class="button button_light home_button"><a href="#">Shop Below</a></div>
                                     </div>
@@ -166,7 +171,7 @@
                     </div>
                     <div class="avds_small_content">
                         <div class="avds_title" style="color:red;">Iphones new and used</div>
-                        <div class="avds_link"><a href="#" style="color:black;">See More</a></div>
+                        <div class="avds_link"><a href="#" style="color:black;">See More Below</a></div>
                     </div>
                 </div>
             </div>
@@ -175,10 +180,12 @@
                 <div class="avds_large_container">
                     <div class="avds_large_content">
                         <div class="avds_title" style="color:red;">Become a Pro in Photograghy</div>
-                        <div class="avds_text"><h4> Are you thinking of becoming a guru in Photography and Cinematography:
+                        <div class="avds_text"><h4> Are you thinking of becoming a guru in Photography and
+                            Cinematography:
                             Contact us below
                         </h4></div>
-                        <div class="avds_link avds_link_large"><a href="https://whispering-refuge-12246.herokuapp.com/">Click to redirect</a></div>
+                        <div class="avds_link avds_link_large"><a href="https://whispering-refuge-12246.herokuapp.com/">Click
+                            to redirect</a></div>
                     </div>
                 </div>
             </div>
@@ -204,27 +211,40 @@
 
                     <div class="product_grid">
                         <!-- Product -->
-                        {% for comp in comps %}
+                        {% for comp in queryset %}
                         <div class="product">
-                            <div class="product_image"><a href="{% url 'computers' %}"><img src="{{ comp.image.url }}" height="300" width="300" alt=""></a></div>
+                            <div class="product_content">
+                                <div class="product_image"><a href="{% url 'computers' %}"><img
+                                        src="{{ comp.image.url }}" height="150" width="150" alt=""></a></div>  <div class="product_title"><a href="{% url 'computers' %}">{{ comp.name }}</a></div>
+                            </div>
                             {% if comp.new %}
                             <div class="product_extra product_new"><a href="#">New</a></div>
                             {% endif %}
-                            <div class="product_content">
-                                <div class="product_title"><a href="{% url 'computers' %}">{{ comp.name }}</a></div>
-                            </div>
                         </div>
                         {% endfor %}
-
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
+     <nav aria-label="Page navigation example">
+                        <ul class="pagination pagination-template d-flex justify-content-center">
+                            {% if queryset.has_previous %}
+                            <li class="page-item"><a href="?{{page_request_var}}={{ queryset.previous_page_number }}"
+                                                     class="page-link"> <i class="fa fa-angle-left"></i></a></li>
+                            {% endif %}
+                            <li class="page-item"><a href="?{{page_request_var}}={{ 1 }}" class="page-link active">1</a>
+                            </li>
+                            <li class="page-item"><a href="?{{page_request_var}}={{ 2 }}" class="page-link">2</a></li>
+                               <li class="page-item"><a href="?{{page_request_var}}={{ 3 }}" class="page-link">3</a></li>
+                            {% if queryset.has_next %}
+                            <li class="page-item"><a href="?{{page_request_var}}={{ queryset.next_page_number }}"
+                                                     class="page-link"> <i class="fa fa-angle-right"></i></a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
     <!-- phone -->
-     <div class="products">
+    <div class="products">
         <div class="container">
             <div class="row" style="color:black;">
                 <div class="col">
@@ -243,13 +263,15 @@
                         <!-- Product -->
                         {% for phon in phons %}
                         <div class="product">
-                            <div class="product_image"><a href="{% url 'iphones' %}"><img src="{{ phon.image.url }}" height="300" width="300" alt=""></a></div>
+                            <div class="product_content">
+                                 <div class="product_image"><a href="{% url 'iphones' %}"><img src="{{ phon.image.url }}" height="150" width="150" alt=""></a></div>
+                                <div class="product_title"><a href="{% url 'iphones' %}">{{ phon.name }}</a></div>
+
+                            </div>
                             {% if phon.new %}
                             <div class="product_extra product_new"><a href="#">New</a></div>
                             {% endif %}
-                            <div class="product_content">
-                                <div class="product_title"><a href="{% url 'iphones' %}">{{ phon.name }}</a></div>
-                            </div>
+
                         </div>
                         {% endfor %}
 
@@ -262,30 +284,31 @@
     </div>
 
 
+
     <!-- Quiz centre -->
 
-     <div class="text-center"><h3><b>Congratulations to Wale, Chima and Samuel on your wins today</b></h3></div>
     <div class="products">
-		<div class="container">
-            <div class="text-center"><h2><b><a href="#" > AIRTIME FREE DATA </a></b></h2></div>
-			<div class="row">
-				<div class="col">
-					<div class="product_grid">
-						<!-- Product -->
+        <div class="container">
+            <div class="text-center"><h3><b><a href="#"> Oma Comm News Headline </a></b></h3></div>
+            <div class="row">
+                <div class="col">
+                    <div class="product_grid">
+                        <!-- Product -->
                         {% for quiz in questions %}
-						<div class="product">
-							<div class="text-centre"><img src="{{ quiz.image.url }}"height="300" width="300" alt=""></div>
-							<div class="product_content">
-								<div class="product_title"><a href="product.html">{{ quiz.text}}</a></div>
-							</div>
-						</div>
-                           {% endfor %}
-					</div>
-				</div>
+                        <div class="product">
+                            <div class="product_content">
+                                <div class="product_title"><a href="product.html">{{ quiz.text}}</a></div>
+                            </div>
+                            <div class=""><img src="{{ quiz.image.url }}" height="150" width="150" alt=""></div>
+                            <br/>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
 
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+    </div>
 
     <!-- Icon Boxes -->
 
@@ -323,7 +346,8 @@
                         <div class="icon_box_image"><img src="{% static 'images/icon_3.svg' %}" alt=""></div>
                         <div class="icon_box_title">24h Fast Support</div>
                         <div class="icon_box_text">
-                            <p>We active for your delivery in 24Hours<br/>adeyinkamichael95@gmail.com<br/> 07063201688</p>
+                            <p>We active for your delivery in 24Hours<br/>adeyinkamichael95@gmail.com<br/> 07063201688
+                            </p>
 
                         </div>
                     </div>
@@ -349,9 +373,10 @@
                         <div class="newsletter_text"><p> Enter your Email here to get daily updates from Oma comm</p>
                         </div>
                         <div class="newsletter_form_container">
-                            <form action="#" id="newsletter_form" class="newsletter_form">
-                                <input type="email" class="newsletter_input" required="required">
-                                <button class="newsletter_button trans_200"><span>Subscribe</span></button>
+                             <form action="/" id="newsletter_form" class="newsletter_form" method="POST">
+                                {% csrf_token %}
+                                <input type="email" name="email" id="email" class="newsletter_input">
+                                <button type="submit" class="newsletter_button trans_200"><span>Subscribe</span></button>
                             </form>
                         </div>
                     </div>
@@ -375,10 +400,11 @@
                         </div>
                         <div class="footer_social ml-lg-auto">
                             <ul>
-                                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+
                                 <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.facebook.com/Madeyinka2"><i class="fa fa-facebook"
+                                                                                     aria-hidden="true"></i></a></li>
+
                             </ul>
                         </div>
                     </div>

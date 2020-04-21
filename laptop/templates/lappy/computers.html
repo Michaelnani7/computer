@@ -3,9 +3,9 @@
 {% block content %}
 
 
-{% for pc in pcs %}
+{% for pc in queryset %}
 <div class="product">
-    <div class="product_image"><a href="{% url 'detail' pc.id %}"><img src="{{ pc.image.url }}" height="120" width="120"  alt=""></a></div>
+    <div class="product_image"><a href="{% url 'detail' pc.id %}"><img src="{{ pc.image.url }}" height="150" width="150"  alt=""></a></div>
     {% if pc.new %}
     <div class="product_extra product_new">New</div>
      {% endif %}
