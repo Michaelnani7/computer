@@ -227,22 +227,6 @@
             </div>
         </div>
     </div>
-     <nav aria-label="Page navigation example">
-                        <ul class="pagination pagination-template d-flex justify-content-center">
-                            {% if queryset.has_previous %}
-                            <li class="page-item"><a href="?{{page_request_var}}={{ queryset.previous_page_number }}"
-                                                     class="page-link"> <i class="fa fa-angle-left"></i></a></li>
-                            {% endif %}
-                            <li class="page-item"><a href="?{{page_request_var}}={{ 1 }}" class="page-link active">1</a>
-                            </li>
-                            <li class="page-item"><a href="?{{page_request_var}}={{ 2 }}" class="page-link">2</a></li>
-                               <li class="page-item"><a href="?{{page_request_var}}={{ 3 }}" class="page-link">3</a></li>
-                            {% if queryset.has_next %}
-                            <li class="page-item"><a href="?{{page_request_var}}={{ queryset.next_page_number }}"
-                                                     class="page-link"> <i class="fa fa-angle-right"></i></a></li>
-                            {% endif %}
-                        </ul>
-                    </nav>
     <!-- phone -->
     <div class="products">
         <div class="container">
@@ -261,7 +245,7 @@
 
                     <div class="product_grid">
                         <!-- Product -->
-                        {% for phon in phons %}
+                        {% for phon in query %}
                         <div class="product">
                             <div class="product_content">
                                  <div class="product_image"><a href="{% url 'iphones' %}"><img src="{{ phon.image.url }}" height="150" width="150" alt=""></a></div>
@@ -282,6 +266,18 @@
         </div>
 
     </div>
+      <nav aria-label="Page navigation example">
+                        <ul class="pagination pagination-template d-flex justify-content-center">
+                            {% if queryset.has_previous %}
+                            <li class="page-item"><a href="?{{page_request_var}}={{ queryset.previous_page_number }}" class="page-link"> <i class="fa fa-angle-left"></i></a></li>
+                            {% endif %}
+                            <li class="page-item"><a href="?{{page_request_var}}={{ 1 }}" class="page-link active">{{queryset.number}}</a>
+                            </li>
+                            {% if queryset.has_next %}
+                            <li class="page-item"><a href="?{{page_request_var}}={{ queryset.next_page_number }}" class="page-link"> <i class="fa fa-angle-right"></i></a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
 
 
 
