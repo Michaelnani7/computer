@@ -15,22 +15,22 @@ def index(request):
         new_signup.email = email
         new_signup.save()
 
-    paginator = Paginator(comps, 3)
-    pagin = Paginator(phons, 3)
+    paginator = Paginator(comps, 4)
+    paginator2 = Paginator(phons, 4)
     page_request_var = 'page'
     page = request.GET.get(page_request_var)
 
     try:
         paginated_queryset = paginator.page(page)
-        paginated_que = pagin.page(page)
+        paginated_que = paginator2.page(page)
 
     except PageNotAnInteger:
         paginated_queryset = paginator.page(1)
-        paginated_que = pagin.page(1)
+        paginated_que = paginator2.page(1)
 
     except EmptyPage:
         paginated_queryset = paginator.page(paginator.num_pages)
-        paginated_que = pagin.page(paginator.num_pages)
+        paginated_que = paginator2.page(paginator.num_pages)
 
     context ={
         'queryset': paginated_queryset,
